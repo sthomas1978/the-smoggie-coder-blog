@@ -24,7 +24,7 @@ The issue was is that we were using Azure secrets as an external dependency and 
 As part of the helm chart deployment, we were using the Kubernetes Secrets Store CSI Driver and the Azure Provider to connect to a secret store and map the secrets as volume into a Pod. The CSI Driver would connect to a provider using linux sockets and gPRC. As it happens you can build you own provider and register it with the CSI driver. Thus I decided to implement a custom provider using the ASP.NET Core Kestrel Web Server. Configure Kestrel to accept unix socket connections and build the gRPC service.
 
 You can view the source code here https://dev.azure.com/sthomas1978/The%20Smoggie%20Coder/_git/Azure%20Secrets%20Provider%20Stub
-You can get the provider container from here https://hub.docker.com/repository/docker/sthomas1978/tsc-azure-secrets-stub
+You can get the provider container from here https://hub.docker.com/repository/docker/thesmoggiecoder/tsc-azure-secrets-stub
 
 #### Caveats
 
