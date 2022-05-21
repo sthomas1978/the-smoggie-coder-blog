@@ -5,8 +5,8 @@ module.exports = {
       name: `Simon Thomas`,
       summary: `who lives and works in London and enjoys technology`,
     },
-    description: `A blog expressing my ideas and new techniques for programming`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `A blog expressing my ideas and techniques for programming`,
+    siteUrl: `https://www.thesmoggiecoder.com`,
   },
   plugins: [
     `gatsby-plugin-image`,

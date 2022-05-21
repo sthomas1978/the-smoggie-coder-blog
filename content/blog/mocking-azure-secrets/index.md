@@ -2,6 +2,7 @@
 title: Simulating Azure Secrets Locally
 description: Using the Kubernetes Secrets Store CSI Driver plugin architecture, we can build our own secrets provider which mimics an Azure Key Vault.
 date: "2022-05-07T23:46:37.121Z"
+keywords: "kubernetes, azure, csi, key vault, secrets, stub, development, testing, local"
 ---
 
 #### Background
@@ -18,7 +19,7 @@ There were a couple of benefits to this
 
 #### So what is stopping us? 
 
-The issue was is that we were using and Azure Key Vault as an external dependency and was too much of a faff getting set up for each developer and tester.
+The issue was is that we were using an Azure Key Vault as an external dependency and was too much of a faff getting set up for each developer and tester.
 
 #### What if we could stub an Azure Key Vault locally?
 
