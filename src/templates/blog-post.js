@@ -1,6 +1,5 @@
 import * as React from "react"
-import { graphql } from "gatsby"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -50,16 +49,16 @@ const BlogPostTemplate = ({ data, location }) => {
         >
           <li>
             {previous && (
-              <OutboundLink href={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </OutboundLink>
+              <Link to={previous.fields.slug} rel="prev">
+              ← {previous.frontmatter.title}
+              </Link>
             )}
           </li>
           <li>
             {next && (
-              <OutboundLink href={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </OutboundLink>
+              <Link to={next.fields.slug} rel="next">
+              {next.frontmatter.title} →
+              </Link>
             )}
           </li>
         </ul>
