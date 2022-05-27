@@ -7,8 +7,10 @@ module.exports = {
     },
     description: `A blog expressing my ideas and techniques for programming`,
     siteUrl: `https://www.thesmoggiecoder.com`,
+    keywords: `dotnet, kubernetes, csharp, c#, smoggie, developer, simon, thomas, kubernetes, technology`
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
