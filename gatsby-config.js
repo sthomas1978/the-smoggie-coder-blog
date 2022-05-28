@@ -6,7 +6,7 @@ module.exports = {
       summary: `who lives and works in London and enjoys technology`,
     },
     description: `A blog expressing my ideas and techniques for programming`,
-    siteUrl: `https://www.thesmoggiecoder.com`,
+    siteUrl: `https://thesmoggiecoder.com`,
     keywords: `dotnet, kubernetes, csharp, c#, smoggie, developer, simon, thomas, kubernetes, technology`
   },
   plugins: [

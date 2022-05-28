@@ -1,3 +1,3 @@
 User-agent: *
 Disallow:
-Sitemap: https://www.thesmoggiecoder.com/sitemap/sitemap-index.xml
+Sitemap: https://thesmoggiecoder.com/sitemap/sitemap-index.xml
