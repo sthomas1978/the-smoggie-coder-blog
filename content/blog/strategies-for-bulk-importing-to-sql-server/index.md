@@ -1,6 +1,6 @@
 ---
 title: Strategies For Bulk Importing To SQL Server
-description: Looking at a couple of techniques for builk importing to SQL Server
+description: Looking at a couple of techniques for bulk inserting to SQL Server
 date: "2022-12-07T23:46:37.121Z"
 keywords: "sql server, bulk insert, import, c#, dotnet, performance"
 ---
@@ -32,6 +32,11 @@ Toolchain=InProcessEmitToolchain  InvocationCount=1  UnrollFactor=1
 
 ![Sql Bulk Insert Results](Tsc.Benchmark.SqlServerBulkInsertBenchmark-barplot.png)
 
+<style scoped>
+table {
+  font-size: 12px;
+}
+</style>
 | Method                                    | NumberOfEntities | Mean         | Error      | StdDev     |
 |------------------------------------------ |----------------- |-------------:|-----------:|-----------:|
 | **EntityFrameworkBulkInsert**                 | **1000**             |     **51.81 ms** |   **1.005 ms** |   **1.505 ms** |
@@ -70,6 +75,8 @@ As you can see the EF method becomes VERY inefficient once you start going past 
 
 #### Summary
 
-For bulk operations its best not to use EF to do this, anything above a couple of 1000 records not ideal. Above this its best to use either the SqlBulkCopy or the TVP SQL operations. If you want to keep things simple and just perform purely insert operations then the SqlBulkCopy is adequate enough. However using the TVP SQL, once you get data into SQL Server you have the abililty to run any SQL Operation such as doing Upserts or other SQL operations besides just insert operations.
+For bulk operations its best not to use EF to do this, anything above a couple of 1000 records is not ideal. I would utilize either SqlBulkCopy or the SQL TVP approaches. If you want to keep things simple and just perform insert operations then the SqlBulkCopy is adequate enough. 
 
-There is also paid for solutions such as Dapper Plus which are pretty performant on bulk insertions as well, but I thought I'd stick to free stuff and see how I get on with that first!.
+However with using SQL TVP approach, you have the ability to perform other operations such as upserts once you get data into SQL Server.
+
+There are paid solutions such as Dapper Plus which are pretty performant on bulk insertions as well, but I thought I'd stick to free stuff and see how I get on with that first!
