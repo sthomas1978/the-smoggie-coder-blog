@@ -1,7 +1,7 @@
 ---
 title: Bulk Upsert To SQL Server
 description: Looking at a possible way to bulk insert into SQL Server using Table Valued Parameters
-date: "2022-12-07T23:46:37.121Z"
+date: "2023-02-07T23:46:37.121Z"
 keywords: "sql server, bulk insert, import, c#, dotnet, performance, table valued parameters"
 ---
 
