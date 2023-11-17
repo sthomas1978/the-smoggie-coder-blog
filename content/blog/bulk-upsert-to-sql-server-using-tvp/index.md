@@ -81,15 +81,11 @@ This is a good start and is very performant as demonstrated in the previous post
 
 - We can make the routine accept any type.
 - We could convert the insert operation into an upsert operation.
-- We could update the newly create entities with the generated ids from the insert operation
+- We could update the newly created entities with the generated ids from the insert operation
 
 #### Making The Routine Accept Any Type
 
 To make th routine accept any type we employ reflection to interrogate the type and build the necessary SQL to run the routine.
-
-#### Make the routine flexible to accept any type.
-
-Before we do a bulk operation we can execute dynamic SQL statement to create the type necessary
 
 ```csharp
         public string BuildUserDefinedTypeSql(params string[] exclusions)
@@ -113,7 +109,7 @@ We use reflection to query the metadata about the properties and generate the SQ
 
 #### Convert The Insert Operation To An Upsert Operation
 
-To generate an upsert operation I utilise SQL Server [MERGE Operation](https://learn.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql?view=sql-server-ver16) which is a pretty useful as it lets you perform updates and inserts in one go.
+To generate an upsert operation I utilise SQL Server [MERGE Operation](https://learn.microsoft.com/en-us/sql/t-sql/statements/merge-transact-sql?view=sql-server-ver16) which is pretty useful as it lets you perform updates and inserts in one go.
 
 ```csharp
         public string BuildUpsertStatementSql()
@@ -155,9 +151,9 @@ FROM @Output WHERE Action = 'INSERT'
 
 #### Return The Ids Of Newly Inserted Entities
 
-When the MERGE operation is executed it returns the Ids of the newly inserted records. The problem here is how to do we map these new Ids to the correct domain object? 
+When the merge operation is executed it returns the ids of the newly inserted records. The problem here is how to do we map these new Ids to the correct domain object? 
 
-What we do is before we send the domain objects to SQL Server, we create a `Dictionary<int, T> map`. The key will be an arbitary temporary id when we populate the dictionary
+Before we send the domain objects to SQL Server, we create a `Dictionary<int, T> map`. The key will be an arbitary temporary id when we populate the dictionary
 
 ```csharp
 var map = new Dictionary<int, T>(
